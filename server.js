@@ -4,7 +4,7 @@ const app = express();
 const notes = require('./db/db.json');
 const fs = require('fs');
 const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
-const PORT = 3005;
+const PORT = process.env.PORT || 3005;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
